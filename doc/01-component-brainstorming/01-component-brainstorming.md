@@ -1,9 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
-
+- **Name**: Collin Rismiller <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
+- **Dot Number**: Rismiller.26
+- **Due Date**: 2/4/25
 ## Assignment Overview
 
 <!-- TODO: read the assignment overview then delete this comment -->
@@ -67,7 +66,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,11 +104,8 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+As a ECE major I see myself working with software and hardware, and I feel like what intrests me the most is some sort of embeded systems. In my free time I spend some of it playing videogames, however most of it I spend at the Center for Automotive research working on Baja Buckeyes student team. Aside from that I take part in Ohio States athletic band and work as a office assiant for the northwest dorms.
+
 
 ## Assignment
 
@@ -200,68 +195,93 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: StudentPackageLog
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a package tracking system for students at a university. It records when packages arrive, notifies students, and tracks when they pick them up.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void logPackageArrival(String packageID, String studentID): Adds a new package to the system, associated with a student.
+    - void markAsPickedUp(String packageID): Marks a package as picked up and removes it from pending packages.
+    - boolean isPackageAvailable(String packageID): Checks if a package is still awaiting pickup.
+    - String getStudentForPackage(String packageID): Returns the student ID associated with a given package.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - List<String> getPackagesForStudent(String studentID): Returns a list of all packages awaiting pickup for a specific student.
+    - void notifyStudent(String studentID): Sends a notification (email/SMS) to a student about package arrival.
+    - int getTotalPendingPackages(): Returns the number of uncollected packages in the system.
+    - boolean hasUnclaimedPackages(String studentID): Checks if a student has any unclaimed packages.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since new packages arrive and are removed once picked up.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Likely map, and maybe queue if a student has more than one package they need to pick up
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, such as MAX_HOLD_DAYS (how long a package can remain unclaimed).
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Kernel Support: logPackageArrival and markAsPickedUp form the core functionality; other features like notifications and searching rely on them.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: DigitalWallet
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A component that manages virtual transactions, balances, and payments.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addFunds(double amount): Adds money to the wallet balance.
+    - boolean makePayment(double amount): Deducts money from the balance if funds are available.
+    - double getBalance(): Returns the current wallet balance.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void requestPayment(String userID, double amount): Sends a payment request to another user.
+    - boolean isSufficientBalance(double amount): Checks if the wallet has enough balance for a payment.
+    - List<String> getTransactionHistory(): Retrieves a log of past transactions.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since balances and transactions could change
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe it could use Natrual number and sequence
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe MAX_DAILY_LIMIT to limit users on there spending
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yeah you could easily due is SufficiendBalance using getBalance() and comparing it to the amount that the transaction is needed
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: AllergenDetector
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A component that scans food ingredients, products, or environments to detect allergens and warn users with allergies.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addAllergen(String allergenName)
+Adds a new allergen to the user’s tracked list.
+    - boolean containsAllergen(String ingredientList)
+Scans a list of ingredients to check if any match the user’s allergens.
+    - void removeAllergen(String allergenName)
+Removes an allergen from the user’s list if they no longer need to track it.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - List<String> getDetectedAllergens(String ingredientList)
+Returns a list of allergens found in the given ingredient list.
+    - boolean isSafeToEat(String ingredientList)
+Uses containsAllergen() to determine if a food product is safe for the user.
+    - void enterIngridentString(String ingridentList)
+Looks up a food product and checks for allergens in its ingredient list.
+    - boolean isCrossContaminationRisk(String facilityInfo)
+Checks if a manufacturing facility processes allergens, indicating potential cross-contamination.
+    - void alertUser(String allergenName, String productName)
+Sends an alert if a dangerous allergen is detected in a product the user wants to consume.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, because allergens can be added, removed, or detected in various foods.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Possibly an ingredients class for storing common allergens. So people using it can know common allergens in there food
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - KNOW_ALLERGENS_LIST list of the users allergens
+      -CROSS_CONTAMINATION_WARINING_THRESHOLD if cross contamination threshold is high be to notify the user to be careful
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - For the list of get Detected Allergens contains Allergen can be used as it it scans all alergens in the users list and returns the ones found in the ingridents
 
 ## Post-Assignment
 
@@ -270,7 +290,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -309,7 +328,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
