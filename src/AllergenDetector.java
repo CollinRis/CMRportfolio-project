@@ -4,7 +4,7 @@ import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
 
 /**
- * The {@code AllergenDetector} component for tracking allergens in food. 
+ * The {@code AllergenDetector} component for tracking allergens in food.
  */
 public class AllergenDetector {
 
@@ -107,24 +107,5 @@ public class AllergenDetector {
     /**
      * Main method for demonstration.
      */
-    public static void main(String[] args) {
-        SimpleWriter out = new SimpleWriter1L();
-        AllergenDetector detector = new AllergenDetector();
 
-        // Predefined test inputs
-        detector.addAllergen("peanuts");
-        detector.addAllergen("milk");
-        detector.addAllergen("soy");
-
-        String testIngredients1 = "sugar, flour, milk, eggs";
-        String testIngredients2 = "sugar, flour, cocoa, vanilla";
-
-        out.println("Testing ingredient list: " + testIngredients1);
-        detector.enterIngredientString(testIngredients1);
-
-        out.println("Testing ingredient list: " + testIngredients2);
-        detector.enterIngredientString(testIngredients2);
-
-        out.close();
-    }
 }
