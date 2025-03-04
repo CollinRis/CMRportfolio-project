@@ -4,7 +4,7 @@ import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
 
 /**
- * The {@code AllergenDetector} component for tracking allergens in food. 
+ * The {@code AllergenDetector} component for tracking allergens in food.
  */
 public class AllergenDetector {
 
