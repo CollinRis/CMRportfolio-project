@@ -1,0 +1,44 @@
+import components.set.Set;
+
+/**
+ * Enhanced interface for the AllergenDetector component.
+ * This interface extends AllergenDetectorKernel and provides additional methods.
+ * @author Collin RIsmiller
+ */
+public interface AllergenDetectorSecondary extends AllergenDetectorKernel {
+
+    /**
+     * Determines if the given food is safe to eat.
+     * @param ingredientList A comma-separated list of ingredients.
+     * @return true if no tracked allergens are found, false otherwise.
+     * @requires ingredientList is not null and properly formatted.
+     * @ensures return value is true if and only if no tracked allergens are found.
+     */
+    boolean isSafeToEat(String ingredientList);
+
+    /**
+     * Checks if the facility has a high risk of cross-contamination.
+     * @param facilityInfo Information about the manufacturing facility.
+     * @return true if cross-contamination risk is high, false otherwise.
+     * @requires facilityInfo is not null.
+     * @ensures return value is true if facilityInfo indicates allergen presence.
+     */
+    boolean isCrossContaminationRisk(String facilityInfo);
+
+    /**
+     * Alerts the user if a dangerous allergen is detected.
+     * @param allergen The detected allergen.
+     * @param productName The food product containing the allergen.
+     * @requires allergen and productName are not null and not empty.
+     * @ensures A warning message is displayed about the detected allergen.
+     */
+    void alertUser(String allergen, String productName);
+
+    /**
+     * Looks up a food product and checks for allergens in its ingredient list.
+     * @param ingredientList A comma-separated list of ingredients.
+     * @requires ingredientList is not null and properly formatted.
+     * @ensures A message is displayed indicating whether allergens were detected.
+     */
+    void enterIngredientString(String ingredientList);
+}

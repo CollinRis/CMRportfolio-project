@@ -8,6 +8,16 @@ the following form: YYYY.0M.0D.
 
 ## [Unreleased]
 
+## 2025.03.04
+
+### Added
+
+- Designed kernel and enhanced interfaces for Allergen Detector component
+
+### Updated
+
+- Fixed Part 2
+
 ## [2025.02.19]
 
 ### Added
