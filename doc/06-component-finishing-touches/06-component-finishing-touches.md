@@ -84,7 +84,7 @@ project. Specifically, students should be able to:
 4. Reflect on the software development process and the individual's own growth
 
 
-MetaCognitive Evaluation
+
 
 
 ## Assignment Rubric
