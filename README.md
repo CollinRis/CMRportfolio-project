@@ -68,3 +68,11 @@ if (!detector.isSafeToEat("sugar, flour, milk")) {
 ALERT: Chocolate Cake contains milk! Avoid consumption.
 ```
 
+### Author
+Collin Rismiller
+
+![](osu-emailsig.png)
+
+College of Engineering
+
+Electrical and Computer Engineering
