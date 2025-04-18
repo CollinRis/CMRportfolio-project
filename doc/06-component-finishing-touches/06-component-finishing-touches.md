@@ -2,7 +2,7 @@
 
 - **Name**: Collin Rismiller<!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
 - **Dot Number**: Rismiller.26<!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**:4/17/25 <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Due Date**:4/18/25 <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
 
 ## Assignment Overview
 
@@ -82,6 +82,10 @@ project. Specifically, students should be able to:
 2. Provide example use cases of a software sequence component
 3. Use version control software to share a repository of code
 4. Reflect on the software development process and the individual's own growth
+
+
+MetaCognitive Evaluation
+
 
 ## Assignment Rubric
 

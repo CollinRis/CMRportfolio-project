@@ -8,6 +8,29 @@ the following form: YYYY.0M.0D.
 
 ## [Unreleased]
 
+
+[2025.04.18]
+### Added
+Implemented AllergenDetector1L kernel class using Set1L
+
+Implemented AllergenDetectorSecondary with secondary methods such as isSafeToEat, alertUser, and enterIngredientString
+
+Added a fully functional demo program (AllergenDetectorUseCases.java) to simulate real-world allergen detection scenarios
+
+Created a complete non-JUnit console-based test file (AllergenDetectorTest1L.java) covering all branches of the kernel and secondary component
+
+Evaluation to component finshing touches
+
+### Fixed
+Resolved class hierarchy issues between AllergenDetector, AllergenDetectorKernel, and AllergenDetectorSecondary
+
+Corrected interface/abstract class implementation mismatches that caused compiler errors
+
+### Updated
+Updated component design to reflect OSU CSE conventions, including clean separation of interface, kernel, secondary, and implementation layers
+
+Added inline comments to all test/demo code for clarity and readability
+
 ## 2025.03.04
 
 ### Added
